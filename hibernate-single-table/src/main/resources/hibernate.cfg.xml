@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 必须配置的属性 -->
+		<!-- 连接数据库信息 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql:///hibernate</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">admin</property>
+		<!-- 方言属性：这个是实现跨数据库关键类 -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- 可选配置属性 -->
+		<!-- 是否自动生成表：这里选用create便于测试 -->
+		<property name="hbm2ddl.auto">create</property>
+		<!-- 是否显示sql -->
+		<property name="show_sql">true</property>
+		<!-- 是否格式化sql -->
+		<!-- <property name="format_sql">true</property> -->
+
+		<!-- 以文件路径的方式加载映射文件 -->
+		<mapping resource="com/jege/hibernate/single/table/User.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

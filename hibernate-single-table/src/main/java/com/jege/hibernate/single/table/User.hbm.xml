@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 映射文件 -->
+<hibernate-mapping package="com.jege.hibernate.single.table">
+	<!-- class表示由hibernate管理的一个持久对象,对应数据库的一个表 ，table表示数据库的表名 -->
+	<class name="User" table="t_user">
+		<!-- id元素是必须的，对应数据库是表的主键 -->
+		<id name="id">
+			<!-- generator表示数据库表的主键生成方式,一般都是使用native -->
+			<!-- native表示自动选择数据库本地的策略: -->
+			<!-- 对于mysql是AUTO_INCREMENT自增 -->
+			<!-- 对于oracle是序列 -->
+			<generator class="native" />
+		</id>
+		<!-- 使用property配置非主键属性 -->
+		<!-- 可以column配置数据库表的不同于模型User的属性，如下username属性对应表的name字段 -->
+		<property name="username" column="name" />
+		<property name="password" />
+	</class>
+</hibernate-mapping>
