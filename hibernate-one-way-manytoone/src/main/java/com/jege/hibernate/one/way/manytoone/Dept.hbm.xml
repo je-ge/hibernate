@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jege.hibernate.one.way.manytoone">
+	<class name="Dept" table="t_dept">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" />
+	</class>
+</hibernate-mapping>

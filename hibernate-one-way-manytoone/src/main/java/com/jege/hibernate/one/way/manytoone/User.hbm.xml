@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jege.hibernate.one.way.manytoone">
+	<class name="User" table="t_user">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="username" column="name" />
+		<!-- class属性:配置一方的全限定类名或者类名，也可以不用配置,Hibernate可以通过反射获取 -->
+		<!-- column属性：配置外键，对应于一方Dept的主键id，也可以不配置默认用属性名称name=dept作为多方的外键列名 -->
+		<many-to-one name="dept" class="Dept" column="dept_id" />
+	</class>
+</hibernate-mapping>
