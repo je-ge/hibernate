@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 继承中的Join策略 -->
+<hibernate-mapping package="com.jege.hibernate.n_extend2">
+	<class name="Employee" table="t_employee">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" />
+		<!-- 在配置子类 -->
+		<joined-subclass name="HourlyEmployee" table="t_HourlyEmployee">
+		    <key column="id"/>
+			<property name="rate" />
+		</joined-subclass>
+		<joined-subclass name="SalariedEmployee" table="t_SalariedEmployee">
+		    <key column="id"/>
+			<property name="salary" />
+		</joined-subclass>
+	</class>
+
+</hibernate-mapping>

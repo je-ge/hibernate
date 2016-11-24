@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Single Table策略:通过 discriminator来区分是父类还是子类-->
+<hibernate-mapping package="com.jege.hibernate.m_extend1">
+	<class name="Employee" table="t_employee" discriminator-value="1">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<!-- 在id之后配置discriminator的数据库类型的字段名称 ,以及类型(默认是string) -->
+		<discriminator column="types" type="int" />
+		<property name="name" />
+		<!-- 在配置子类 -->
+		<subclass name="HourlyEmployee" discriminator-value="2">
+			<property name="rate"/>
+		</subclass>
+		<subclass name="SalariedEmployee" discriminator-value="3">
+			<property name="salary" />
+		</subclass>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,11 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping resource="com/jege/hibernate/y_query_cache/Product.hbm.xml" />
+		<!-- 类的二级缓存 -->
+		<class-cache class="com.jege.hibernate.y_query_cache.Product"
+			region="Simple" usage="read-write" />
+	</session-factory>
+</hibernate-configuration>

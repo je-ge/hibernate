@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jege.hibernate.l_component">
+	<class name="Employee" table="t_employee">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" />
+		<!-- 组成关系:以对象的方式来解决重复的信息 -->
+		<!-- 公司所在的地址 -->
+		<!-- class必须配置为全类名 -->
+		<component name="comAddress" class="Address">
+			<!-- property:name必须配置成java的属性，column配置成数据库的字段，而且不能重复 -->
+			<property name="city" column="com_city" />
+			<property name="street" column="com_street" />
+		</component>
+		<!-- 籍贯所在的地址 -->
+		<component name="homeAddress" class="Address">
+			<property name="city" column="home_city" />
+			<property name="street" column="home_street" />
+		</component>
+	</class>
+
+</hibernate-mapping>

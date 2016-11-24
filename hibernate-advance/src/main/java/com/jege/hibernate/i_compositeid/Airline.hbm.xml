@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jege.hibernate.i_compositeid">
+	<class name="Airline" table="t_airline">
+		<!-- 复合主键，双主键，数据库start_city，end_city同时为主键 -->
+		<composite-id>
+			<key-property name="startCity" column="start_city" length="3" />
+			<key-property name="endCity" column="end_city" length="3"/>
+		</composite-id>
+		<property name="name" />
+	</class>
+
+</hibernate-mapping>

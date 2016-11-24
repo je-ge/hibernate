@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jege.hibernate.k_self">
+	<class name="Employee" table="t_employee">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" />
+		<!-- private Employee manager;// 多对一： 多个员工对一上级 -->
+		<many-to-one name="manager" column="manager_id" class="Employee"/>
+		<!-- private Set<Employee> children = new HashSet<Employee>();// 一对多：一个领导有多个下级 -->
+		<set name="children" inverse="true" cascade="save-update">
+			<key column="manager_id" />
+			<one-to-many class="Employee" />
+		</set>
+	</class>
+
+</hibernate-mapping>

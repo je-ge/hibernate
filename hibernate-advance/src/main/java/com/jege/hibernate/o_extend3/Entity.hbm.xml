@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 继承中的鉴别器与内连接相结合 -->
+<hibernate-mapping package="com.jege.hibernate.o_extend3">
+	<class name="Employee" table="t_employee" discriminator-value="1">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<discriminator column="types" type="int"/>
+		<property name="name" />
+		<!-- 在配置子类 -->
+		<subclass name="HourlyEmployee" discriminator-value="2">
+			<join table="t_HourlyEmployee">
+				<key column="id" />
+				<property name="rate" />
+			</join>
+		</subclass>
+		<subclass name="SalariedEmployee" discriminator-value="3">
+			<join table="t_SalariedEmployee">
+				<key column="id" />
+				<property name="salary" />
+			</join>
+		</subclass>
+	</class>
+
+</hibernate-mapping>

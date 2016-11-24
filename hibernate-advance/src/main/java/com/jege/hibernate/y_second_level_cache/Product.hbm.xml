@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.jege.hibernate.y_second_level_cache">
+	<class name="Product">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" />
+		<property name="price" />
+		<many-to-one name="type" class="ProductType" column="type_id" />
+	</class>
+</hibernate-mapping>        

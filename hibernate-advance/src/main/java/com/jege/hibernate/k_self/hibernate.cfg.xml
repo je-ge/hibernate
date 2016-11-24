@@ -1,0 +1,8 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping resource="com/jege/hibernate/k_self/Employee.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
