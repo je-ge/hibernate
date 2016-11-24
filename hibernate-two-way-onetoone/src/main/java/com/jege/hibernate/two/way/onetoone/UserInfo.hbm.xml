@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.jege.hibernate.two.way.onetoone">
+	<class name="UserInfo" table="t_user_info">
+		<id name="id">
+			<generator class="foreign">
+				<!-- UserInfo的主键来自于当前user属性的id -->
+				<param name="property">user</param>
+			</generator>
+		</id>
+		<property name="age" />
+		<property name="address" />
+		<!-- 共享主键是关系双方的主键是一样的值 -->
+		<!-- constrained="true"添加约束的关键 -->
+		<one-to-one name="user" constrained="true" />
+	</class>
+</hibernate-mapping>        

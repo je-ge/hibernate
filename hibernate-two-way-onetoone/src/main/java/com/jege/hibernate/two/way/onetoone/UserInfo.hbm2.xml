@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.jege.hibernate.two.way.onetoone">
+	<class name="UserInfo" table="t_user_info">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="age" />
+		<property name="address" />
+		<!-- 使用多对一的方式来模拟一对一的关系 -->
+		<!-- unique="true"外键的唯一 -->
+		<many-to-one name="user" class="User" column="user_id" unique="true" />
+	</class>
+</hibernate-mapping>        
