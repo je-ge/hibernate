@@ -1,4 +1,5 @@
-# http://blog.csdn.net/je_ge
+# hibernate
+[我的博客](http://blog.csdn.net/je_ge "je哥的浆糊") 
 ##hibernate-single-table	单表
 ##hibernate-one-way-manytoone	单向多对一
 ##hibernate-two-way-onetomany	双向一对多
@@ -11,3 +12,4 @@
 
 [![](http://img.blog.csdn.net/20161120140715209 "微信打赏")][weixinx]
 [![](http://img.blog.csdn.net/20161120140741975) "支付宝打赏"][zfb]
+
