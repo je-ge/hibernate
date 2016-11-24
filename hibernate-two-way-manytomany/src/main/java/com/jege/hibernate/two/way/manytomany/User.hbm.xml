@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.jege.hibernate.two.way.manytomany">
+	<class name="User" table="t_user">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name" />
+		<!-- 配置中间表t_user_role -->
+		<set name="roles" table="t_user_role">
+			<!-- 配置当前类User在中间表的主外键名称 -->
+			<key column="user_id" />
+			<!-- 多对多 -->
+			<!-- class必须配置， column配置关联类Role在中间表的主外键名称 -->
+			<many-to-many class="Role" column="role_id" />
+		</set>
+	</class>
+</hibernate-mapping>        
