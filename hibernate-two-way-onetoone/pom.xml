@@ -4,11 +4,21 @@
 
 	<groupId>com.jege.hibernate</groupId>
 	<artifactId>hibernate-two-way-onetoone</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0.RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>hibernate-two-way-onetoone</name>
-	<url>http://maven.apache.org</url>
+	<url>http://blog.csdn.net/je_ge</url>
+
+	<developers>
+		<developer>
+			<id>je_ge</id>
+			<name>je_ge</name>
+			<email>1272434821@qq.com</email>
+			<url>http://blog.csdn.net/je_ge</url>
+			<timezone>8</timezone>
+		</developer>
+	</developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
